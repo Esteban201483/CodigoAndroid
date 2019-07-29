@@ -22,16 +22,6 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Prueba1"
-            android:id="@+id/btnPrueba1"
-            android:layout_alignTop="@+id/btnPrueba2"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:onClick="sonidoPalabraPrueba1" />
-
-        <Button
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
             android:text="Prueba2"
             android:id="@+id/btnPrueba2"
             android:layout_marginTop="138dp"
@@ -39,5 +29,20 @@
             android:layout_alignParentRight="true"
             android:layout_alignParentEnd="true"
             android:onClick="sonidoPalabraPrueba2" />
+
+        <ImageButton
+            android:id="@+id/imageButton"
+            android:layout_width="179dp"
+            android:layout_height="88dp"
+            android:layout_alignBottom="@+id/btnPrueba2"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentLeft="true"
+            android:layout_marginStart="11dp"
+            android:layout_marginLeft="11dp"
+            android:layout_marginBottom="-21dp"
+            android:contextClickable="false"
+            android:onClick="sonidoPalabraPrueba1"
+            android:scaleType="centerCrop"
+            android:src="@drawable/prueba1" />
     </RelativeLayout>
 </RelativeLayout>
