@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.example.sistema.pruebatcu1">
+    package="com.example.sistema.Fraseodiccionario">
 
     <application
         android:allowBackup="true"
@@ -8,6 +8,7 @@
         android:label="Fraseodiccionario"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <activity android:name=".casoLetra2"></activity>
         <activity
             android:name=".MainActivity"
             android:label="Fraseodiccionario"
@@ -21,7 +22,7 @@
         <activity
             android:name=".casoLetra1"
             android:label="@string/title_activity_caso_letra1"
-            android:theme="@style/AppTheme.NoActionBar"></activity>
+            android:theme="@style/AppTheme.NoActionBar" />
     </application>
 
 </manifest>

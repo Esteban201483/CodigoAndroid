@@ -1,11 +1,8 @@
-package com.example.sistema.pruebatcu1;
+package com.example.sistema.Fraseodiccionario;
 
-import android.app.Fragment;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -70,10 +67,12 @@ public class MainActivity extends AppCompatActivity {
      * Llama prueba1 una nueva vista sin destruir la vista actual, de manera que el usuario pueda regresar
      * al menu principal con el boton de retroceder del teléfono.
      * @param clase La clase prueba1 llamar. No tiene que ser una instancia.
+     * @param categoria El número de categoria al cual dirige el boton
      */
-    public void llamarVista(Class clase)
+    public void llamarVista(Class clase, int categoria)
     {
         Intent intent = new Intent(this,clase);
+        intent.putExtra("CATEGORIA", "" + categoria);
         startActivity(intent);
     }
 
@@ -89,16 +88,48 @@ public class MainActivity extends AppCompatActivity {
         {
             //Cada vez que se agregue una vista, debe agregarse un case correspondiente al boton
             //que llamará a dicha vista.
-            case R.id.btnLetra1:
-                llamarVista(casoLetra1.class);
+            case R.id.btn_informacion:
+                llamarVista(casoLetra1.class,1);
                 break;
-
-            case R.id.btnLetra2:
-                showMessage("Usted presiono B");
+            case R.id.btn_pregunta:
+                llamarVista(casoLetra1.class, 2);
+                break;
+            case R.id.btn_saludo:
+                llamarVista(casoLetra1.class, 3);
+                break;
+            case R.id.btn_despedida:
+                llamarVista(casoLetra1.class, 4);
+                break;
+            case R.id.btn_agradecimiento:
+                llamarVista(casoLetra1.class, 5);
+                break;
+            case R.id.btn_fisico:
+                llamarVista(casoLetra1.class, 6);
+                break;
+            case R.id.btn_emocion:
+                llamarVista(casoLetra1.class, 7);
+                break;
+            case R.id.btn_momento:
+                llamarVista(casoLetra1.class, 8);
+                break;
+            case R.id.btn_accion:
+                llamarVista(casoLetra1.class, 9);
+                break;
+            case R.id.btn_solicitud:
+                llamarVista(casoLetra1.class, 10);
+                break;
+            case R.id.btn_permiso:
+                llamarVista(casoLetra1.class, 11);
+                break;
+            case R.id.btn_actividad:
+                llamarVista(casoLetra1.class, 12);
+                break;
+            case R.id.btn_gusto:
+                llamarVista(casoLetra1.class, 13);
                 break;
 
             default:
-                showMessage("No se ha asignado ningun accion prueba1 este boton");
+                showMessage("No se ha asignado ningun accion a este boton");
         }
 
     }

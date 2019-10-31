@@ -1,4 +1,4 @@
-package com.example.sistema.pruebatcu1;
+package com.example.sistema.Fraseodiccionario;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -7,7 +7,6 @@ import android.media.MediaPlayer;
 /**
  * Esta clase se encarga de las operaciones relacionadas con el audio de la aplicación.
  *
- * Created by Sistema on 24/07/2019.
  */
 public class ReproductorAudio {
 

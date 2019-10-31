@@ -6,74 +6,104 @@
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingRight="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
-    tools:context="com.example.sistema.pruebatcu1.MainActivityFragment"
+    tools:context="com.example.sistema.Fraseodiccionario.MainActivityFragment"
     tools:showIn="@layout/activity_main">
 
-    <TextView
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="Hola Mundo"
-        android:id="@+id/textView" />
-
-    <RelativeLayout
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_alignParentBottom="true"
-        android:layout_alignParentLeft="true"
-        android:layout_alignParentStart="true"
-        android:layout_marginBottom="172dp">
+        android:orientation="vertical">
 
         <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_informacion"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="A"
-            android:id="@+id/btnLetra1"
-            android:layout_alignParentTop="true"
-            android:layout_alignParentLeft="true"
-            android:layout_alignParentStart="true"
-            android:layout_marginTop="33dp"
-            android:onClick="redireccionarVista" />
+            android:onClick="redireccionarVista"
+            android:text="Información Personal" />
 
         <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_pregunta"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="B"
-            android:id="@+id/btnLetra2"
-            android:layout_alignBottom="@+id/btnLetra1"
-            android:layout_toRightOf="@+id/btnLetra1"
-            android:layout_toEndOf="@+id/btnLetra1"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:onClick="redireccionarVista" />
+            android:onClick="redireccionarVista"
+            android:text="Preguntas" />
 
         <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_saludo"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="C"
-            android:id="@+id/btnLetra3"
-            android:layout_alignBottom="@+id/btnLetra2"
-            android:layout_toRightOf="@+id/btnLetra2"
-            android:layout_toEndOf="@+id/btnLetra2"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:onClick="redireccionarVista" />
+            android:onClick="redireccionarVista"
+            android:text="Saludos" />
 
         <Button
-            style="?android:attr/buttonStyleSmall"
-            android:layout_width="wrap_content"
+            android:id="@+id/btn_despedida"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="D"
-            android:id="@+id/btnLetra4"
-            android:layout_alignTop="@+id/btnLetra3"
-            android:layout_toRightOf="@+id/btnLetra3"
-            android:layout_toEndOf="@+id/btnLetra3"
-            android:layout_marginLeft="32dp"
-            android:layout_marginStart="32dp"
-            android:onClick="redireccionarVista" />
+            android:onClick="redireccionarVista"
+            android:text="Despedidas" />
 
-    </RelativeLayout>
+        <Button
+            android:id="@+id/btn_agradecimiento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Agradecimiento" />
 
+        <Button
+            android:id="@+id/btn_fisico"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Estados Fisicos" />
+
+        <Button
+            android:id="@+id/btn_emocion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Estados Emocionales" />
+
+        <Button
+            android:id="@+id/btn_momento"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Momentos" />
+
+        <Button
+            android:id="@+id/btn_accion"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Acciones" />
+
+        <Button
+            android:id="@+id/btn_solicitud"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Solicitudes" />
+
+        <Button
+            android:id="@+id/btn_permiso"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Permisos" />
+
+        <Button
+            android:id="@+id/btn_actividad"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Actividades" />
+
+        <Button
+            android:id="@+id/btn_gusto"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:onClick="redireccionarVista"
+            android:text="Gustos" />
+
+    </LinearLayout>
 </RelativeLayout>
