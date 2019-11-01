@@ -5,10 +5,13 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.Button;
 import android.widget.TextView;
 import android.widget.Toast;
 
 public class casoLetra1 extends AppCompatActivity {
+
+    private final int cantidad_categorias = 13;
 
     private int indice_palabra = 0; //Indical cual es la palabra de la categoria actual.
     private int id_audio = 0; //Indica cual es el audio que debe sonar
@@ -18,6 +21,7 @@ public class casoLetra1 extends AppCompatActivity {
 
     private int cantidad_elementos[]; //Indica la cantidad de elemmentos por categoria
     private String categorias[]; //Almacena el nombre de las categorias
+
 
 
     @Override
@@ -37,7 +41,8 @@ public class casoLetra1 extends AppCompatActivity {
 
     public void inicializarCategorias()
     {
-        categorias = new String[13];
+        categorias = new String[cantidad_categorias];
+        cantidad_elementos = new int[cantidad_categorias];
 
         categorias[0]  = "Información Personal";
         categorias[1]  = "Preguntas";
@@ -52,6 +57,22 @@ public class casoLetra1 extends AppCompatActivity {
         categorias[10] = "Permisos";
         categorias[11] = "Actividades";
         categorias[12] = "Gustos";
+
+        cantidad_elementos[0] = 14;
+        cantidad_elementos[1] = 2;
+        cantidad_elementos[2] = 30;
+        cantidad_elementos[3] = 8;
+        cantidad_elementos[4] = 1;
+        cantidad_elementos[5] = 8;
+        cantidad_elementos[6] = 5;
+        cantidad_elementos[7] = 10;
+        cantidad_elementos[8] = 32;
+        cantidad_elementos[9] = 11;
+        cantidad_elementos[10] = 1;
+        cantidad_elementos[11] = 7;
+        cantidad_elementos[12] = 4;
+
+
     }
 
     /**
@@ -75,6 +96,7 @@ public class casoLetra1 extends AppCompatActivity {
     /**
      * Actualiza el audio
      * Despliega un mensaje de error en caso de que el audio no exista, pero no tira la aplicación.
+     * todo: Eliminar linea de codigo que cambia texto del boton, cuando las palabras esten listas.
      */
     public void setearAudio()
     {
@@ -83,6 +105,10 @@ public class casoLetra1 extends AppCompatActivity {
 
         if(id_audio == 0)
             showMessage("Error: El audio " + nombre_audio + " no existe");
+
+        //cambia el texto del boton
+        Button botonPalabra = (Button) findViewById(R.id.btn_palabra);
+        botonPalabra.setText("Palabra: " + indice_palabra);
     }
 
     /**
@@ -125,30 +151,40 @@ public class casoLetra1 extends AppCompatActivity {
 
     /**
      *
-     * todo: logica de retroceso
      * @param button el boton de retroceso
      */
     public void retroceder(View button)
     {
+        //Solamente no retrocede en la palabra 1 de la categoria 1
         if(categoria > 1 || indice_palabra > 1)
         {
             indice_palabra--;
 
-            if(indice_palabra == 0) {
+            //Si se intenta retroceder desde la primer palabra de una categoria
+            if(indice_palabra == 0) { //
                 categoria--;
-                //indice_palabra = maximos[categoria-1] - 1;
+                //Empieza desde el ultimo elemento de la categoria anterior.
+                indice_palabra = cantidad_elementos[categoria-1];
+
             }
             setearRecursos();
         }
     }
 
     /**
-     * todo: logica de avance
      * @param button El boton de avance
      */
     public void avanzar(View button)
     {
         indice_palabra++;
+
+        //Si avanza desde la ultima palabra de la categoria actual
+        if(indice_palabra == cantidad_elementos[categoria-1]+1)
+        {
+            //Se posiciona en la primera palabra de la proxima categoria
+            categoria++;
+            indice_palabra = 1;
+        }
 
         setearRecursos();
     }
