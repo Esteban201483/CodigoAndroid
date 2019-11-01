@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
+import android.widget.TextView;
 import android.widget.Toast;
 
 public class casoLetra1 extends AppCompatActivity {
@@ -15,19 +16,52 @@ public class casoLetra1 extends AppCompatActivity {
     private int categoria = 0; //Indica la categoria actual
     private String genero = "a"; //Indica el genero. a = mujer, b = hombre.
 
+    private int cantidad_elementos[]; //Indica la cantidad de elemmentos por categoria
+    private String categorias[]; //Almacena el nombre de las categorias
+
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caso_letra1);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-        setSupportActionBar(toolbar);
+       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
+     //   setSupportActionBar(toolbar);
+
+        inicializarCategorias();
 
         categoria = Integer.parseInt(getIntent().getStringExtra("CATEGORIA"));
         indice_palabra = 1; //Accede a la primera palabra por default
         setearRecursos();
     }
 
+
+    public void inicializarCategorias()
+    {
+        categorias = new String[13];
+
+        categorias[0]  = "Información Personal";
+        categorias[1]  = "Preguntas";
+        categorias[2]  = "Saludos";
+        categorias[3]  = "Despedidas";
+        categorias[4]  = "Agradecimiento";
+        categorias[5]  = "Estados Fisicos";
+        categorias[6]  = "Estados Emocionales";
+        categorias[7]  = "Momentos";
+        categorias[8]  = "Acciones";
+        categorias[9]  = "Solicitudes";
+        categorias[10] = "Permisos";
+        categorias[11] = "Actividades";
+        categorias[12] = "Gustos";
+    }
+
+    /**
+     * Actualiza el nombre de la categoria
+     */
+    public void setearCategoria()
+    {
+        TextView cat = (TextView) findViewById(R.id.txt_categoria);
+        cat.setText(categorias[categoria-1]);
+    }
 
     /**
      * Actualiza la imagen.
@@ -56,6 +90,7 @@ public class casoLetra1 extends AppCompatActivity {
      */
     public void setearRecursos()
     {
+        setearCategoria();
         setearAudio();
         setearImagen();
     }
