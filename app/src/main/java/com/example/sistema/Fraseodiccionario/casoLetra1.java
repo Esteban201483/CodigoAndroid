@@ -6,6 +6,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -127,10 +128,15 @@ public class casoLetra1 extends AppCompatActivity {
      */
     public void cambioGenero(View switchElement)
     {
-        if(genero.equals("b"))
+        ImageView switch_image = (ImageView) switchElement;
+        if(genero.equals("b")) {
             genero = "a";
-        else
+            switch_image.setImageResource(R.drawable.switch1);
+        }
+        else {
             genero = "b";
+            switch_image.setImageResource(R.drawable.switch2);
+        }
 
         setearAudio();
     }

@@ -34,14 +34,14 @@
             android:textSize="18sp"
             android:textStyle="bold" />
 
-        <Switch
-            android:id="@+id/switch_genero"
+        <ImageView
+            android:id="@+id/imageView2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="8dp"
-            android:layout_marginRight="8dp"
+            android:layout_weight="1"
             android:onClick="cambioGenero"
-            android:text="f" />
+            android:src="@drawable/switch1" />
+
     </LinearLayout>
 
     <LinearLayout
