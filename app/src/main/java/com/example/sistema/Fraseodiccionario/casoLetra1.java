@@ -23,6 +23,8 @@ public class casoLetra1 extends AppCompatActivity {
     private int cantidad_elementos[]; //Indica la cantidad de elemmentos por categoria
     private String categorias[]; //Almacena el nombre de las categorias
 
+    private String traduccion = "";  //Almacena la traducción de la palabra actual
+
 
 
     @Override
@@ -31,14 +33,40 @@ public class casoLetra1 extends AppCompatActivity {
         setContentView(R.layout.activity_caso_letra1);
        // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
      //   setSupportActionBar(toolbar);
-
+        asignarLongOnclick();
         inicializarCategorias();
+
 
         categoria = Integer.parseInt(getIntent().getStringExtra("CATEGORIA"));
         indice_palabra = 1; //Accede a la primera palabra por default
         setearRecursos();
     }
 
+    /**
+     * Asigna el metodo que despliega el mensaje de la traduccion cuando se presiona el boton
+     * más tiempo de lo normal
+     */
+    public void asignarLongOnclick()
+    {
+        Button boton_palabra = (Button) findViewById(R.id.btn_palabra);
+
+        boton_palabra.setOnLongClickListener(new View.OnLongClickListener() {
+            @Override
+            public boolean onLongClick(View v) {
+                mostrarTraduccion();
+                return true;
+            }
+        });
+    }
+
+    /**
+     * Método intermediario. Cuando se presiona por largo tiempo el boton se encarga de desplegar
+     * el mensaje de la traduccion
+     */
+    public void mostrarTraduccion()
+    {
+        showMessage(traduccion);
+    }
 
     public void inicializarCategorias()
     {
@@ -112,6 +140,24 @@ public class casoLetra1 extends AppCompatActivity {
         botonPalabra.setText("Palabra: " + indice_palabra);
     }
 
+    public void setearTraduccion()
+    {
+
+
+        int id_array = getResources().getIdentifier("categoria"+categoria,"array",getPackageName());
+
+        if(id_array != 0) {
+            String[] array = getResources().getStringArray(id_array);
+
+            if(array.length > (indice_palabra-1))
+                traduccion = array[indice_palabra - 1];
+            else
+                traduccion = "No se encuentra disponible la traducción de esta palabra";
+        }
+        else
+            traduccion = "No se encuentra disponible la traducción de esta categoria";
+    }
+
     /**
      * Asigna la imagen y audio basandose en la palabra y categoría actual
      */
@@ -120,6 +166,7 @@ public class casoLetra1 extends AppCompatActivity {
         setearCategoria();
         setearAudio();
         setearImagen();
+        setearTraduccion();
     }
 
     /**

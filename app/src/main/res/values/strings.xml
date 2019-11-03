@@ -2,7 +2,208 @@
     <string name="app_name">PruebaTcu1</string>
     <string name="action_settings">Settings</string>
 
-    <!-- TODO: Remove or change this placeholder text -->
+
     <string name="hello_blank_fragment">Hello blank fragment</string>
     <string name="title_activity_caso_letra1">casoLetra1</string>
+
+    <!-- Arrays de strings correspondientes a las palabras de las categorias-->
+
+    <!--TODO: Verificar que las traducciones coincidan con los audios-->
+
+    <!-- Palabras de la categoria 1-->
+    <string-array name="categoria1">
+        <item>¿Cómo se llama usted?</item>
+        <item>¿Cómo se llama usted?</item>
+        <item>Me llamo____</item>
+        <item>¿Cuántos años tiene usted?</item>
+        <item>Tengo_____años</item>
+        <item>¿Dónde vive usted?</item>
+        <item>Vivo en Brorán/ Soy de Brorán</item>
+        <item>Soy brorán</item>
+        <item>Soy de Bijagual</item>
+        <item>¿Cómo se llama su mamá?</item>
+        <item>Mi mamá se llama</item>
+        <item>¿Cómo se llama su papá?</item>
+        <item>Mi papá se llama</item>
+        <item>¿Usted tiene hermanos?</item>
+    </string-array>
+
+
+    <!--Palabras de la categoria 2-->
+    <string-array name="categoria2">
+        <item>Sí</item>
+        <item>No</item>
+    </string-array>
+
+    <!--Palabras de la categoria 3-->
+    <string-array name="categoria3">
+        <item>Saludos generales (a cualquier hora)</item>
+        <item>Saludos generales (a cualquier hora)</item>
+        <item>Saludos generales (a cualquier hora)</item>
+        <item>Al amanecer</item>
+        <item>Al amanecer</item>
+        <item>A media mañana</item>
+        <item>A media mañana</item>
+        <item>Antes del mediodía​</item>
+        <item>Antes del mediodía​</item>
+        <item>Al mediodía</item>
+        <item>Al mediodía</item>
+        <item>Después del mediodía</item>
+        <item>Después del mediodía</item>
+        <item>A media tarde</item>
+        <item>A media tarde</item>
+        <item>Avanzada la tarde</item>
+        <item>Avanzada la tarde</item>
+        <item>En la noche</item>
+        <item>En la noche</item>
+        <item>Bien, bien (respuesta)</item>
+        <item>Bien, bien (respuesta)</item>
+        <item>Y usted, ¿cómo está?</item>
+        <item>¿Y usted?</item>
+        <item>_Yo también</item>
+        <item>_Igual a usted</item>
+        <item>Bienvenido</item>
+        <item>Bienvenidos</item>
+
+    </string-array>
+
+    <!--Palabras de la categoria 4-->
+    <string-array name="categoria4">
+        <item>Hasta luego (una persona)</item>
+        <item>Hasta luego (una persona)</item>
+        <item>Hasta luego (varias personas)</item>
+        <item>Hasta luego (varias personas)</item>
+        <item>Adiós/hasta luego (lo dice una persona)</item>
+        <item>Adiós/hasta luego (lo dicen dos o más personas)</item>
+        <item>Respuesta a la despedida:</item>
+        <item>Vámonos</item>
+        <item>Vaya con Dios/Que Dios lo acompañe</item>
+
+    </string-array>
+
+    <!--Palabras de la categoria 5-->
+    <string-array name="categoria5">
+        <item>Que Dios se lo pague (Gracias)</item>
+    </string-array>
+
+    <!--Palabras de la cateogria 6-->
+    <string-array name="categoria6">
+        <item>Tengo frío</item>
+        <item>Tengo calor</item>
+        <item>Tengo sueño</item>
+        <item>Tengo hambre</item>
+        <item>Tengo sed</item>
+        <item>Estoy enfermo(a)</item>
+        <item>Tengo dolor de cabeza</item>
+        <item>Estoy muy lleno</item>
+    </string-array>
+
+    <!--Palabras de la categoria 7-->
+    <string-array name="categoria7">
+        <item>Estoy feliz</item>
+        <item>Estoy triste</item>
+        <item>Estoy enojado</item>
+        <item>Estoy aburrido</item>
+        <item>Estoy cansado </item>
+    </string-array>
+
+    <!--Palabras de la categoria 8-->
+    <string-array name="categoria8">
+        <item>¿Qué hora es?/¿Qué momento del día es?</item>
+        <item>Al amanecer</item>
+        <item>A media mañana</item>
+        <item>Antes del mediodía</item>
+        <item>Mediodía</item>
+        <item>Después del mediodía</item>
+        <item>A media tarde</item>
+        <item>Al atardecer</item>
+        <item>Alrededor de las 5:45 pm </item>
+        <item>Noche (sin luz)</item>
+    </string-array>
+
+    <!--Palabras de la categoria 9-->
+    <string-array name="categoria9">
+        <item>Vaya (a un lugar)</item>
+        <item>Vayan (a un lugar)</item>
+        <item>Váyase</item>
+        <item>Ir: dirección horizontal</item>
+        <item>Vaya hacia arriba</item>
+        <item>Vaya hacia abajo</item>
+        <item>Venga</item>
+        <item>Vengan</item>
+        <item>Venga en dirección horizontal</item>
+        <item>Venga hacia arriba</item>
+        <item>Venga hacia abajo</item>
+        <item>Siéntese</item>
+        <item>Siéntense</item>
+        <item>Póngase de pie</item>
+        <item>Pónganse de pie</item>
+        <item>Cante</item>
+        <item>Canten</item>
+        <item>Escuche</item>
+        <item>Escúcheme</item>
+        <item>Haga silencio</item>
+        <item>Hagan silencio</item>
+        <item>No salga</item>
+        <item>No salgan </item>
+        <item>Espérese</item>
+        <item>Repita </item>
+    </string-array>
+
+    <!--Palabras de la cateogria 10-->
+    <string-array name="categoria10">
+        <item>Deme comida</item>
+        <item>Deme más comida</item>
+        <item>Deme agua</item>
+        <item>Deme más agua</item>
+        <item>Deme café </item>
+        <item>Deme un cafecito (solicitud con cortesía)</item>
+        <item>Quiero ir al baño</item>
+        <item>Quiero ir a la escuela</item>
+        <item>No quiero ir a la escuela</item>
+        <item>Quiero irme a la casa</item>
+    </string-array>
+
+    <!--Palabras de la categoria 11-->
+    <string-array name="categoria11">
+        <item>¿?</item> <!--todo: Preguntar que es esto-->
+    </string-array>
+
+    <!--Palabras de la cateogira 12-->
+    <string-array name="categoria12">
+        <item>Voy a ir a bañarme al río</item>
+        <item>Voy a bañarme</item>
+        <item>Voy a acostarme (a dormir)</item>
+        <item>Voy a lavarme los dientes</item>
+        <item>Vamos a jugar</item>
+        <item>Vamos a comer</item>
+        <item>Vamos a beber</item>
+    </string-array>
+
+    <!--Palabras de la cateogira 13-->
+    <string-array name="categoria13">
+        <item>Me gusta el café </item>
+        <item>Me gusta el chocolate</item>
+        <item>¿Te gusta el café?</item>
+    </string-array>
+
+    <!--Palabras de la cateogira 14-->
+    <string-array name="categoria14">
+        <item>¿Cómo se dice esto en el idioma?</item>
+        <item>Se dice</item>
+        <item>¿Qué es eso?</item>
+        <item>¿Qué es esto?</item>
+        <item>¿Está lista la comida?</item>
+        <item>¿En serio?</item>
+    </string-array>
+
+    <!--Palabras de la cateogira 15-->
+    <string-array name="categoria15">
+        <item>Se me olvidó</item>
+        <item>Ya me acuerdo</item>
+        <item>No sé</item>
+        <item>No puedo</item>
+        <item>¿Me puede ayudar?</item>
+        <item>La comida está muy rica</item>
+    </string-array>
 </resources>
