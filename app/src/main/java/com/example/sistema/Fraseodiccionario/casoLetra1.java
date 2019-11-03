@@ -224,11 +224,12 @@ public class casoLetra1 extends AppCompatActivity {
                 indice_palabra = cantidad_elementos[categoria-1];
 
             }
-            else
-            {
-                showMessage("Esta es la primer palabra. No se puede retroceder.");
-            }
+
             setearRecursos();
+        }
+        else
+        {
+            showMessage("Esta es la primer palabra. No se puede retroceder.");
         }
     }
 
