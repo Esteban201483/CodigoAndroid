@@ -12,7 +12,7 @@ import android.widget.Toast;
 
 public class casoLetra1 extends AppCompatActivity {
 
-    private final int cantidad_categorias = 13;
+    private final int cantidad_categorias = 15;
 
     private int indice_palabra = 0; //Indical cual es la palabra de la categoria actual.
     private int id_audio = 0; //Indica cual es el audio que debe sonar
@@ -74,7 +74,7 @@ public class casoLetra1 extends AppCompatActivity {
         cantidad_elementos = new int[cantidad_categorias];
 
         categorias[0]  = "Información Personal";
-        categorias[1]  = "Preguntas";
+        categorias[1]  = "Preguntas Sí/No";
         categorias[2]  = "Saludos";
         categorias[3]  = "Despedidas";
         categorias[4]  = "Agradecimiento";
@@ -86,6 +86,8 @@ public class casoLetra1 extends AppCompatActivity {
         categorias[10] = "Permisos";
         categorias[11] = "Actividades";
         categorias[12] = "Gustos";
+        categorias[13] = "Preguntas";
+        categorias[14] = "Expresiones Útiles";
 
         cantidad_elementos[0] = 14;
         cantidad_elementos[1] = 2;
@@ -100,6 +102,8 @@ public class casoLetra1 extends AppCompatActivity {
         cantidad_elementos[10] = 1;
         cantidad_elementos[11] = 7;
         cantidad_elementos[12] = 4;
+        cantidad_elementos[13] = 6;
+        cantidad_elementos[14] = 6;
 
 
     }
@@ -220,6 +224,10 @@ public class casoLetra1 extends AppCompatActivity {
                 indice_palabra = cantidad_elementos[categoria-1];
 
             }
+            else
+            {
+                showMessage("Esta es la primer palabra. No se puede retroceder.");
+            }
             setearRecursos();
         }
     }
@@ -229,17 +237,22 @@ public class casoLetra1 extends AppCompatActivity {
      */
     public void avanzar(View button)
     {
-        indice_palabra++;
+        //Avanza solo si no es la última palabra de la última categoria
+        if(indice_palabra != cantidad_elementos[categoria-1] || categoria != cantidad_categorias ) {
+            indice_palabra++;
 
-        //Si avanza desde la ultima palabra de la categoria actual
-        if(indice_palabra == cantidad_elementos[categoria-1]+1)
-        {
-            //Se posiciona en la primera palabra de la proxima categoria
-            categoria++;
-            indice_palabra = 1;
+            //Si avanza desde la ultima palabra de la categoria actual
+            if (indice_palabra == cantidad_elementos[categoria - 1] + 1) {
+                //Se posiciona en la primera palabra de la proxima categoria
+                categoria++;
+                indice_palabra = 1;
+            }
+
+
+            setearRecursos();
         }
-
-        setearRecursos();
+        else
+            showMessage("Esta es la última palabra del diccionario.");
     }
 
 

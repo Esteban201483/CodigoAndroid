@@ -127,6 +127,12 @@ public class MainActivity extends AppCompatActivity {
             case R.id.btn_gusto:
                 llamarVista(casoLetra1.class, 13);
                 break;
+            case R.id.btn_pregunta2:
+                llamarVista(casoLetra1.class,14);
+                break;
+            case R.id.btn_expresion:
+                llamarVista(casoLetra1.class,15);
+                break;
 
             default:
                 showMessage("No se ha asignado ningun accion a este boton");

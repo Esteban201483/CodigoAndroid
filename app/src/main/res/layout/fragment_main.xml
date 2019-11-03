@@ -32,7 +32,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:onClick="redireccionarVista"
-                android:text="Preguntas" />
+                android:text="Preguntas Sí/No" />
 
             <Button
                 android:id="@+id/btn_saludo"
@@ -110,6 +110,20 @@
                 android:layout_height="wrap_content"
                 android:onClick="redireccionarVista"
                 android:text="Gustos" />
+
+            <Button
+                android:id="@+id/btn_pregunta2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="redireccionarVista"
+                android:text="Preguntas" />
+
+            <Button
+                android:id="@+id/btn_expresion"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="redireccionarVista"
+                android:text="Expresiones" />
         </LinearLayout>
     </ScrollView>
 </RelativeLayout>
