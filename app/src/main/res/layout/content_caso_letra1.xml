@@ -5,6 +5,7 @@
     android:id="@+id/relativeLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_weight="10"
     android:orientation="vertical"
     android:paddingLeft="@dimen/activity_horizontal_margin"
     android:paddingTop="@dimen/activity_vertical_margin"
@@ -16,8 +17,8 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="0"
+        android:layout_height="0dp"
+        android:layout_weight="1"
         android:gravity="center_horizontal"
         android:orientation="horizontal"
         android:weightSum="1">
@@ -46,14 +47,30 @@
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="15"
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:gravity="right"
+        android:weightSum="30">
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="12"
+            android:onClick="cambioGenero"
+            android:src="@drawable/switch1" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:layout_weight="7"
         android:gravity="center_horizontal"
         android:orientation="vertical"
         android:weightSum="10">
 
         <ImageView
-            android:id="@+id/imageview"
+            android:id="@+id/imageViewIlustracion"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_marginStart="8dp"
@@ -61,60 +78,35 @@
             android:layout_marginTop="28dp"
             android:layout_marginEnd="8dp"
             android:layout_marginRight="8dp"
-            android:background="#EEFDFF"
             android:src="@mipmap/ic_launcher" />
 
     </LinearLayout>
 
     <LinearLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_weight="2"
-        android:orientation="vertical">
+        android:layout_height="0dp"
+        android:layout_weight="1"
+        android:orientation="horizontal">
 
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:gravity="center_horizontal"
-            android:orientation="vertical">
+        <Button
+            android:id="@+id/btn_atras"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="retroceder"
+            android:text="Atras" />
 
-            <Button
-                android:id="@+id/btn_palabra"
-                android:layout_width="177dp"
-                android:layout_height="wrap_content"
-                android:layout_marginStart="116dp"
-                android:onClick="sonarAudio"
-                android:text="Palabra" />
+        <Space
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1" />
 
-        </LinearLayout>
-
-        <LinearLayout
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="1"
-            android:orientation="horizontal">
-
-            <Button
-                android:id="@+id/btn_atras"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:onClick="retroceder"
-                android:text="Atras" />
-
-            <Space
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1" />
-
-            <Button
-                android:id="@+id/btn_siguiente"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="0"
-                android:onClick="avanzar"
-                android:text="Siguiente" />
-        </LinearLayout>
+        <Button
+            android:id="@+id/btn_siguiente"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="0"
+            android:onClick="avanzar"
+            android:text="Siguiente" />
 
     </LinearLayout>
 

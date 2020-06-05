@@ -10,6 +10,31 @@ import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
 
+/**
+ * Despliega una interfaz desde la cual se pueden recorrer todas las palabras de todas las categorias.
+ * Cada vez que se cambie de palabra, se actualiza el audio y la imagen a desplegar
+ *
+ * Notación:
+ *
+ * Audios:
+ *      c[número de categoria]s[número de palabra][genero]<versión de Panama>
+ *      donde:
+ *      Genero a = voz masculina
+ *      Genero b = voz femenina
+ *
+ *      Versión de panama corresponde a la letra n. Si la tiene agregada, entonces
+ *      dicho audio corresponde a un audio de Panama. Esto según el cambio indicado.
+ *      Audios pendientes
+ *
+ * Ilustraciones:
+ *      c[número de categoria]s[número de palabra]
+ *
+ * Traducciones:
+ *
+ *  Importante: Los números de categoria del 1 al 9 NO empiezan con 0. Se empieza a contar
+ *  a partir del uno
+ */
+
 public class casoLetra1 extends AppCompatActivity {
 
     private final int cantidad_categorias = 15;
@@ -24,18 +49,34 @@ public class casoLetra1 extends AppCompatActivity {
     private String categorias[]; //Almacena el nombre de las categorias
 
     private String traduccion = "";  //Almacena la traducción de la palabra actual
+    private ImageView imageView;
 
 
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_caso_letra1);
-       // Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
-     //   setSupportActionBar(toolbar);
+        setContentView(R.layout.activity_caso_letra1); //Asigna el layout a la actividad
         asignarLongOnclick();
         inicializarCategorias();
 
+        imageView = (ImageView) findViewById(R.id.imageViewIlustracion);
+        imageView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sonarAudio();
+            }
+        });
+
+        imageView.setOnLongClickListener(new View.OnLongClickListener(){
+            @Override
+            public boolean onLongClick(View v)
+            {
+                mostrarTraduccion();
+
+                return true;
+            }
+        });
 
         categoria = Integer.parseInt(getIntent().getStringExtra("CATEGORIA"));
         indice_palabra = 1; //Accede a la primera palabra por default
@@ -48,7 +89,7 @@ public class casoLetra1 extends AppCompatActivity {
      */
     public void asignarLongOnclick()
     {
-        Button boton_palabra = (Button) findViewById(R.id.btn_palabra);
+        /*Button boton_palabra = (Button) findViewById(R.id.btn_palabra);
 
         boton_palabra.setOnLongClickListener(new View.OnLongClickListener() {
             @Override
@@ -56,7 +97,7 @@ public class casoLetra1 extends AppCompatActivity {
                 mostrarTraduccion();
                 return true;
             }
-        });
+        });*/
     }
 
     /**
@@ -123,7 +164,10 @@ public class casoLetra1 extends AppCompatActivity {
     public void setearImagen()
     {
         String nombre_imagen = "c" + categoria + "s" + indice_palabra;
-        // id_imagen = getResources().getIdentifier(nombre_imagen,"drawable",getPackageName());
+        id_imagen = getResources().getIdentifier(nombre_imagen,"drawable",getPackageName());
+
+        imageView.setImageResource(id_imagen);
+
     }
 
     /**
@@ -140,8 +184,8 @@ public class casoLetra1 extends AppCompatActivity {
             showMessage("Error: El audio " + nombre_audio + " no existe");
 
         //cambia el texto del boton
-        Button botonPalabra = (Button) findViewById(R.id.btn_palabra);
-        botonPalabra.setText("Palabra: " + indice_palabra);
+        //Button botonPalabra = (Button) findViewById(R.id.btn_palabra);
+        //botonPalabra.setText("Palabra: " + indice_palabra);
     }
 
     public void setearTraduccion()
@@ -195,10 +239,9 @@ public class casoLetra1 extends AppCompatActivity {
 
     /**
      * Se encarga de hacer sonar el audio de la palabra.
-     * Si el audio no existe simplemente no suena en vez de tirar la aplicación.
-     * @param button Referencia al botón obligatoria para ligar la función con el evento onClick
+     * Si el audio no existe, no realiza ninguna acción
      */
-    public void sonarAudio(View button)
+    public void sonarAudio()
     {
         if(id_audio != 0) {
             ReproductorAudio ra = new ReproductorAudio();
