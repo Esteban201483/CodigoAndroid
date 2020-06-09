@@ -22,13 +22,14 @@ import android.widget.Toast;
  *      Genero a = voz masculina
  *      Genero b = voz femenina
  *
- *      Versión de panama corresponde a la letra n. Si la tiene agregada, entonces
+ *      Versión de panama corresponde a la letra p. Si la tiene agregada, entonces
  *      dicho audio corresponde a un audio de Panama. Esto según el cambio indicado.
  *      Audios pendientes
  *
  * Ilustraciones:
- *      c[número de categoria]s[número de palabra]
- *
+ *      c[número de categoria]s[número de palabra]<versión de Panama>
+ *      Versión de panama corresponde a la letra p
+*
  * Traducciones:
  *
  *  Importante: Los números de categoria del 1 al 9 NO empiezan con 0. Se empieza a contar
@@ -50,6 +51,8 @@ public class casoLetra1 extends AppCompatActivity {
 
     private String traduccion = "";  //Almacena la traducción de la palabra actual
     private ImageView imageView;
+
+    private String version_panama = "";
 
 
 
@@ -163,8 +166,18 @@ public class casoLetra1 extends AppCompatActivity {
      */
     public void setearImagen()
     {
-        String nombre_imagen = "c" + categoria + "s" + indice_palabra;
+        String nombre_imagen = "c" + categoria + "s" + indice_palabra + version_panama;
         id_imagen = getResources().getIdentifier(nombre_imagen,"drawable",getPackageName());
+
+        /**
+         * Controla el caso en el que una palabra no tiene versión de Panama
+         */
+        if(id_imagen == 0 && version_panama.equals("p"))
+        {
+            showMessage("Esta palabra no cuenta con versión de panama");
+            nombre_imagen = "c" + categoria + "s" + indice_palabra;
+            id_imagen = getResources().getIdentifier(nombre_imagen,"drawable",getPackageName());
+        }
 
         imageView.setImageResource(id_imagen);
 
@@ -177,7 +190,7 @@ public class casoLetra1 extends AppCompatActivity {
      */
     public void setearAudio()
     {
-        String nombre_audio = "c" + categoria + "s" + indice_palabra + genero;
+        String nombre_audio = "c" + categoria + "s" + indice_palabra + genero + version_panama;
         id_audio = getResources().getIdentifier(nombre_audio,"raw",getPackageName());
 
         if(id_audio == 0)
@@ -234,6 +247,27 @@ public class casoLetra1 extends AppCompatActivity {
         }
 
         setearAudio();
+    }
+
+    /**
+     * Alterna de versión de Costa Rica a Panama y viceversa
+     * @param switchElement el switch cuyo cambio determina la versión
+     */
+    public void cambioVersion(View switchElement)
+    {
+        ImageView switch_image = (ImageView) switchElement;
+
+        if(version_panama.equals("p")) {
+            version_panama = "";
+            switch_image.setImageResource(R.drawable.switch1);
+        }
+        else {
+            version_panama = "p";
+            switch_image.setImageResource(R.drawable.switch2);
+        }
+
+        setearAudio();
+        setearImagen();
     }
 
 

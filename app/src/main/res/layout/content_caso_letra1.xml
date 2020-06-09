@@ -36,7 +36,7 @@
             android:textStyle="bold" />
 
         <ImageView
-            android:id="@+id/imageView2"
+            android:id="@+id/imageViewGenero"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_weight="1"
@@ -53,11 +53,11 @@
         android:weightSum="30">
 
         <ImageView
-            android:id="@+id/imageView"
+            android:id="@+id/imageViewPanama"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_weight="12"
-            android:onClick="cambioGenero"
+            android:onClick="cambioVersion"
             android:src="@drawable/switch1" />
     </LinearLayout>
 
