@@ -2,6 +2,8 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/CodigoAndroid.iml" filepath="$PROJECT_DIR$/.idea/modules/CodigoAndroid.iml" group="CodigoAndroid" />
+      <module fileurl="file://$PROJECT_DIR$/.idea/modules/app/CodigoAndroid-app.iml" filepath="$PROJECT_DIR$/.idea/modules/app/CodigoAndroid-app.iml" group="CodigoAndroid/app" />
       <module fileurl="file://$PROJECT_DIR$/Diccionario.iml" filepath="$PROJECT_DIR$/Diccionario.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
     </modules>
