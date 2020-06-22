@@ -3,9 +3,7 @@ package com.example.sistema.Fraseodiccionario;
 import android.content.Context;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
-import android.support.v7.widget.Toolbar;
 import android.view.View;
-import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.TextView;
 import android.widget.Toast;
@@ -19,16 +17,17 @@ import android.widget.Toast;
  * Audios:
  *      c[número de categoria]s[número de palabra][genero]<versión de Panama>
  *      donde:
- *      Genero a = voz masculina
- *      Genero b = voz femenina
+ *      Genero h = voz masculina
+ *      Genero f = voz femenina
  *
  *      Versión de panama corresponde a la letra p. Si la tiene agregada, entonces
  *      dicho audio corresponde a un audio de Panama. Esto según el cambio indicado.
  *      Audios pendientes
  *
  * Ilustraciones:
- *      c[número de categoria]s[número de palabra]<versión de Panama>
- *      Versión de panama corresponde a la letra p
+ *      c[número de categoria]s[número de palabra]<versión de Pais>
+ *      Versión de Panamá corresponde a la letra pn
+ *      Versión de Costa Rica corresponde a la letra cr
 *
  * Traducciones:
  *
@@ -38,13 +37,18 @@ import android.widget.Toast;
 
 public class casoLetra1 extends AppCompatActivity {
 
+    private final String HOMBRE = "h";
+    private final String MUJER = "m";
+    private final String PANAMA = "pn";
+    private final String COSTARICA = "cr";
+
     private final int cantidad_categorias = 15;
 
     private int indice_palabra = 0; //Indical cual es la palabra de la categoria actual.
     private int id_audio = 0; //Indica cual es el audio que debe sonar
     private int id_imagen = 0; //Indica cual es la imagen que se debe mostrar
     private int categoria = 0; //Indica la categoria actual
-    private String genero = "a"; //Indica el genero. a = mujer, b = hombre.
+    private String genero = MUJER;
 
     private int cantidad_elementos[]; //Indica la cantidad de elemmentos por categoria
     private String categorias[]; //Almacena el nombre de las categorias
@@ -52,7 +56,9 @@ public class casoLetra1 extends AppCompatActivity {
     private String traduccion = "";  //Almacena la traducción de la palabra actual
     private ImageView imageView;
 
-    private String version_panama = "";
+    private String version_pais = COSTARICA;
+
+
 
 
 
@@ -60,7 +66,6 @@ public class casoLetra1 extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_caso_letra1); //Asigna el layout a la actividad
-        asignarLongOnclick();
         inicializarCategorias();
 
         imageView = (ImageView) findViewById(R.id.imageViewIlustracion);
@@ -86,22 +91,6 @@ public class casoLetra1 extends AppCompatActivity {
         setearRecursos();
     }
 
-    /**
-     * Asigna el metodo que despliega el mensaje de la traduccion cuando se presiona el boton
-     * más tiempo de lo normal
-     */
-    public void asignarLongOnclick()
-    {
-        /*Button boton_palabra = (Button) findViewById(R.id.btn_palabra);
-
-        boton_palabra.setOnLongClickListener(new View.OnLongClickListener() {
-            @Override
-            public boolean onLongClick(View v) {
-                mostrarTraduccion();
-                return true;
-            }
-        });*/
-    }
 
     /**
      * Método intermediario. Cuando se presiona por largo tiempo el boton se encarga de desplegar
@@ -166,16 +155,16 @@ public class casoLetra1 extends AppCompatActivity {
      */
     public void setearImagen()
     {
-        String nombre_imagen = "c" + categoria + "s" + indice_palabra + version_panama;
+        String nombre_imagen = "c" + categoria + "s" + indice_palabra + version_pais;
         id_imagen = getResources().getIdentifier(nombre_imagen,"drawable",getPackageName());
 
         /**
          * Controla el caso en el que una palabra no tiene versión de Panama
          */
-        if(id_imagen == 0 && version_panama.equals("p"))
+        if(id_imagen == 0 && version_pais.equals(PANAMA))
         {
             showMessage("Esta palabra no cuenta con versión de panama");
-            nombre_imagen = "c" + categoria + "s" + indice_palabra;
+            nombre_imagen = "c" + categoria + "s" + indice_palabra + COSTARICA;
             id_imagen = getResources().getIdentifier(nombre_imagen,"drawable",getPackageName());
         }
 
@@ -190,15 +179,11 @@ public class casoLetra1 extends AppCompatActivity {
      */
     public void setearAudio()
     {
-        String nombre_audio = "c" + categoria + "s" + indice_palabra + genero + version_panama;
+        String nombre_audio = "c" + categoria + "s" + indice_palabra + genero + version_pais;
         id_audio = getResources().getIdentifier(nombre_audio,"raw",getPackageName());
 
         if(id_audio == 0)
             showMessage("Error: El audio " + nombre_audio + " no existe");
-
-        //cambia el texto del boton
-        //Button botonPalabra = (Button) findViewById(R.id.btn_palabra);
-        //botonPalabra.setText("Palabra: " + indice_palabra);
     }
 
     public void setearTraduccion()
@@ -237,12 +222,12 @@ public class casoLetra1 extends AppCompatActivity {
     public void cambioGenero(View switchElement)
     {
         ImageView switch_image = (ImageView) switchElement;
-        if(genero.equals("b")) {
-            genero = "a";
+        if(genero.equals(HOMBRE)) {
+            genero = MUJER;
             switch_image.setImageResource(R.drawable.switch1);
         }
         else {
-            genero = "b";
+            genero = HOMBRE;
             switch_image.setImageResource(R.drawable.switch2);
         }
 
@@ -257,12 +242,12 @@ public class casoLetra1 extends AppCompatActivity {
     {
         ImageView switch_image = (ImageView) switchElement;
 
-        if(version_panama.equals("p")) {
-            version_panama = "";
+        if(version_pais.equals(PANAMA)) {
+            version_pais = COSTARICA;
             switch_image.setImageResource(R.drawable.switch1);
         }
         else {
-            version_panama = "p";
+            version_pais = PANAMA;
             switch_image.setImageResource(R.drawable.switch2);
         }
 
