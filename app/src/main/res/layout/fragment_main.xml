@@ -1,4 +1,5 @@
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -15,115 +16,252 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent">
 
-        <LinearLayout
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:orientation="vertical">
+        <android.support.constraint.ConstraintLayout
+            android:id="@+id/linearLayout"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <Button
                 android:id="@+id/btn_informacion"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginTop="16dp"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Información Personal" />
+                android:text="Información Personal"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_pregunta"
+
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
 
             <Button
                 android:id="@+id/btn_pregunta"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Preguntas Sí/No" />
+                android:text="Preguntas Sí/No"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_saludo"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_informacion" />
 
             <Button
                 android:id="@+id/btn_saludo"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Saludos" />
+                android:text="Saludos"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_despedida"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_pregunta" />
 
             <Button
                 android:id="@+id/btn_despedida"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Despedidas" />
+                android:text="Despedidas"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_agradecimiento"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_saludo" />
 
             <Button
                 android:id="@+id/btn_agradecimiento"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
                 android:onClick="redireccionarVista"
-                android:text="Agradecimiento" />
+                android:text="Agradecimiento"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_fisico"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_despedida" />
 
             <Button
                 android:id="@+id/btn_fisico"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Estados Fisicos" />
+                android:text="Estados Fisicos"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_emocion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_agradecimiento" />
 
             <Button
                 android:id="@+id/btn_emocion"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Estados Emocionales" />
+                android:text="Estados Emocionales"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_momento"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_fisico" />
 
             <Button
                 android:id="@+id/btn_momento"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Momentos" />
+                android:text="Momentos"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_accion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_emocion" />
 
             <Button
                 android:id="@+id/btn_accion"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Acciones" />
+                android:text="Acciones"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_solicitud"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_momento" />
 
             <Button
                 android:id="@+id/btn_solicitud"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:onClick="redireccionarVista"
-                android:text="Solicitudes" />
+                android:text="Solicitudes"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_permiso"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_accion" />
 
             <Button
                 android:id="@+id/btn_permiso"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Permisos" />
+                android:text="Permisos"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_actividad"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_solicitud" />
 
             <Button
                 android:id="@+id/btn_actividad"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Actividades" />
+                android:text="Actividades"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_gusto"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_permiso" />
 
             <Button
                 android:id="@+id/btn_gusto"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Gustos" />
+                android:text="Gustos"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_pregunta2"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_actividad" />
 
             <Button
                 android:id="@+id/btn_pregunta2"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
+                android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
-                android:text="Preguntas" />
+                android:text="Preguntas"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toTopOf="@+id/btn_expresion"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_gusto" />
 
             <Button
                 android:id="@+id/btn_expresion"
-                android:layout_width="match_parent"
+                android:layout_width="200dp"
                 android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/margen_izquierdo_boton"
+                android:layout_marginLeft="@dimen/margen_izquierdo_boton"
+                android:background="@color/colorPrimary"
+                android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:onClick="redireccionarVista"
-                android:text="Expresiones" />
-        </LinearLayout>
+                android:text="Expresiones"
+                android:textColor="@color/colorTextoBotones"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/btn_pregunta2" />
+        </android.support.constraint.ConstraintLayout>
     </ScrollView>
 </RelativeLayout>
