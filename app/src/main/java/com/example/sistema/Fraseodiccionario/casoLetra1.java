@@ -54,7 +54,10 @@ public class casoLetra1 extends AppCompatActivity {
     private String categorias[]; //Almacena el nombre de las categorias
 
     private String traduccion = "";  //Almacena la traducción de la palabra actual
+
     private ImageView imageView;
+    private ImageView imageViewPais;
+    private ImageView imageViewGenero;
 
     private String version_pais = COSTARICA;
 
@@ -69,6 +72,9 @@ public class casoLetra1 extends AppCompatActivity {
         inicializarCategorias();
 
         imageView = (ImageView) findViewById(R.id.imageViewIlustracion);
+        imageViewPais =(ImageView) findViewById(R.id.imageViewPanama);
+        imageViewGenero =(ImageView) findViewById(R.id.imageViewGenero);
+
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -87,7 +93,7 @@ public class casoLetra1 extends AppCompatActivity {
         });
 
         categoria = Integer.parseInt(getIntent().getStringExtra("CATEGORIA"));
-        indice_palabra = 1; //Accede a la primera palabra por default
+        indice_palabra = 0; //Accede a la primera palabra por default
         setearRecursos();
     }
 
@@ -122,21 +128,21 @@ public class casoLetra1 extends AppCompatActivity {
         categorias[13] = "Preguntas";
         categorias[14] = "Expresiones Útiles";
 
-        cantidad_elementos[0] = 14;
-        cantidad_elementos[1] = 2;
-        cantidad_elementos[2] = 30;
-        cantidad_elementos[3] = 8;
-        cantidad_elementos[4] = 1;
-        cantidad_elementos[5] = 8;
-        cantidad_elementos[6] = 5;
-        cantidad_elementos[7] = 10;
-        cantidad_elementos[8] = 32;
-        cantidad_elementos[9] = 11;
-        cantidad_elementos[10] = 1;
-        cantidad_elementos[11] = 7;
-        cantidad_elementos[12] = 4;
-        cantidad_elementos[13] = 6;
-        cantidad_elementos[14] = 6;
+        cantidad_elementos[0] = 15;
+        cantidad_elementos[1] = 3;
+        cantidad_elementos[2] = 31;
+        cantidad_elementos[3] = 9;
+        cantidad_elementos[4] = 2;
+        cantidad_elementos[5] = 9;
+        cantidad_elementos[6] = 6;
+        cantidad_elementos[7] = 11;
+        cantidad_elementos[8] = 33;
+        cantidad_elementos[9] = 12;
+        cantidad_elementos[10] = 2;
+        cantidad_elementos[11] = 8;
+        cantidad_elementos[12] = 5;
+        cantidad_elementos[13] = 7;
+        cantidad_elementos[14] = 7;
 
 
     }
@@ -156,6 +162,21 @@ public class casoLetra1 extends AppCompatActivity {
     public void setearImagen()
     {
         String nombre_imagen = "c" + categoria + "s" + indice_palabra + version_pais;
+
+        if(indice_palabra == 0)  //Si es la sección
+        {
+            nombre_imagen = "c" + categoria + "s" + indice_palabra;
+            //Oculta los switchs
+
+            imageViewPais.setVisibility(View.INVISIBLE);
+            imageViewGenero.setVisibility(View.INVISIBLE);
+        }
+        else
+        {
+            imageViewPais.setVisibility(View.VISIBLE);
+            imageViewGenero.setVisibility(View.VISIBLE);
+        }
+
         id_imagen = getResources().getIdentifier(nombre_imagen,"drawable",getPackageName());
 
         /**
@@ -188,20 +209,20 @@ public class casoLetra1 extends AppCompatActivity {
 
     public void setearTraduccion()
     {
+        if(indice_palabra != 0)  //No traduce las secciones
+        {
+            int id_array = getResources().getIdentifier("categoria" + categoria, "array", getPackageName());
 
+            if (id_array != 0) {
+                String[] array = getResources().getStringArray(id_array);
 
-        int id_array = getResources().getIdentifier("categoria"+categoria,"array",getPackageName());
-
-        if(id_array != 0) {
-            String[] array = getResources().getStringArray(id_array);
-
-            if(array.length > (indice_palabra-1))
-                traduccion = array[indice_palabra - 1];
-            else
-                traduccion = "No se encuentra disponible la traducción de esta palabra";
+                if (array.length > (indice_palabra - 1))
+                    traduccion = array[indice_palabra - 1];
+                else
+                    traduccion = "No se encuentra disponible la traducción de esta palabra";
+            } else
+                traduccion = "No se encuentra disponible la traducción de esta categoria";
         }
-        else
-            traduccion = "No se encuentra disponible la traducción de esta categoria";
     }
 
     /**
@@ -275,12 +296,12 @@ public class casoLetra1 extends AppCompatActivity {
     public void retroceder(View button)
     {
         //Solamente no retrocede en la palabra 1 de la categoria 1
-        if(categoria > 1 || indice_palabra > 1)
+        if(categoria > 1 || indice_palabra > 0)
         {
             indice_palabra--;
 
             //Si se intenta retroceder desde la primer palabra de una categoria
-            if(indice_palabra == 0) { //
+            if(indice_palabra < 0) { //
                 categoria--;
                 //Empieza desde el ultimo elemento de la categoria anterior.
                 indice_palabra = cantidad_elementos[categoria-1];
@@ -308,7 +329,7 @@ public class casoLetra1 extends AppCompatActivity {
             if (indice_palabra == cantidad_elementos[categoria - 1] + 1) {
                 //Se posiciona en la primera palabra de la proxima categoria
                 categoria++;
-                indice_palabra = 1;
+                indice_palabra = 0; //La primer palabra sería la sección
             }
 
 
