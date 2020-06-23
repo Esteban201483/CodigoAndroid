@@ -5,6 +5,7 @@ import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
 import android.view.View;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -58,6 +59,8 @@ public class casoLetra1 extends AppCompatActivity {
     private ImageView imageView;
     private ImageView imageViewPais;
     private ImageView imageViewGenero;
+    private LinearLayout linearLayout1;
+    private LinearLayout linearLayout2;
 
     private String version_pais = COSTARICA;
 
@@ -74,6 +77,8 @@ public class casoLetra1 extends AppCompatActivity {
         imageView = (ImageView) findViewById(R.id.imageViewIlustracion);
         imageViewPais =(ImageView) findViewById(R.id.imageViewPanama);
         imageViewGenero =(ImageView) findViewById(R.id.imageViewGenero);
+        linearLayout1 = (LinearLayout) findViewById(R.id.linearLayout1);
+        linearLayout2 = (LinearLayout) findViewById(R.id.linearLayout2);
 
         imageView.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -170,11 +175,16 @@ public class casoLetra1 extends AppCompatActivity {
 
             imageViewPais.setVisibility(View.INVISIBLE);
             imageViewGenero.setVisibility(View.INVISIBLE);
+            linearLayout1.setVisibility(View.GONE);
+            linearLayout2.setVisibility(View.GONE);
+
         }
         else
         {
             imageViewPais.setVisibility(View.VISIBLE);
             imageViewGenero.setVisibility(View.VISIBLE);
+            linearLayout1.setVisibility(View.VISIBLE);
+            linearLayout2.setVisibility(View.VISIBLE);
         }
 
         id_imagen = getResources().getIdentifier(nombre_imagen,"drawable",getPackageName());
