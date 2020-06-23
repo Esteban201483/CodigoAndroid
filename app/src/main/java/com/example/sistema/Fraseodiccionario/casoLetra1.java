@@ -224,11 +224,11 @@ public class casoLetra1 extends AppCompatActivity {
         ImageView switch_image = (ImageView) switchElement;
         if(genero.equals(HOMBRE)) {
             genero = MUJER;
-            switch_image.setImageResource(R.drawable.switch1);
+            switch_image.setImageResource(R.drawable.switchm);
         }
         else {
             genero = HOMBRE;
-            switch_image.setImageResource(R.drawable.switch2);
+            switch_image.setImageResource(R.drawable.switchh);
         }
 
         setearAudio();
@@ -244,11 +244,11 @@ public class casoLetra1 extends AppCompatActivity {
 
         if(version_pais.equals(PANAMA)) {
             version_pais = COSTARICA;
-            switch_image.setImageResource(R.drawable.switch1);
+            switch_image.setImageResource(R.drawable.switchcr);
         }
         else {
             version_pais = PANAMA;
-            switch_image.setImageResource(R.drawable.switch2);
+            switch_image.setImageResource(R.drawable.switchpn);
         }
 
         setearAudio();

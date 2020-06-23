@@ -41,7 +41,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="1"
             android:onClick="cambioGenero"
-            android:src="@drawable/switch1" />
+            android:src="@drawable/switchm" />
 
     </LinearLayout>
 
@@ -58,7 +58,7 @@
             android:layout_height="wrap_content"
             android:layout_weight="12"
             android:onClick="cambioVersion"
-            android:src="@drawable/switch1" />
+            android:src="@drawable/switchcr" />
     </LinearLayout>
 
     <LinearLayout
