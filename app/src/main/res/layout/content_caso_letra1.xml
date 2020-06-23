@@ -93,6 +93,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:onClick="retroceder"
+            android:textColor="@color/colorTextoBotones"
+            android:background="@color/colorPrimary"
             android:text="Atras" />
 
         <Space
@@ -106,6 +108,8 @@
             android:layout_height="wrap_content"
             android:layout_weight="0"
             android:onClick="avanzar"
+            android:textColor="@color/colorTextoBotones"
+            android:background="@color/colorPrimary"
             android:text="Siguiente" />
 
     </LinearLayout>

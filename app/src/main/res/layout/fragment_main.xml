@@ -34,7 +34,7 @@
                 android:text="Información Personal"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_pregunta"
-
+                tools:ignore="OnClick"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
                 app:layout_constraintTop_toTopOf="parent" />
@@ -53,7 +53,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/btn_saludo"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_informacion" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_informacion"
+                tools:ignore="OnClick" />
 
             <Button
                 android:id="@+id/btn_saludo"
@@ -69,7 +70,8 @@
                 app:layout_constraintBottom_toTopOf="@+id/btn_despedida"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintStart_toStartOf="parent"
-                app:layout_constraintTop_toBottomOf="@+id/btn_pregunta" />
+                app:layout_constraintTop_toBottomOf="@+id/btn_pregunta"
+                tools:ignore="OnClick" />
 
             <Button
                 android:id="@+id/btn_despedida"
@@ -80,6 +82,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Despedidas"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_agradecimiento"
@@ -96,6 +99,7 @@
                 android:layout_marginStart="@dimen/margen_izquierdo_boton"
                 android:layout_marginLeft="@dimen/margen_izquierdo_boton"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Agradecimiento"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_fisico"
@@ -112,6 +116,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Estados Fisicos"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_emocion"
@@ -128,6 +133,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Estados Emocionales"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_momento"
@@ -144,6 +150,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Momentos"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_accion"
@@ -160,6 +167,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Acciones"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_solicitud"
@@ -176,6 +184,7 @@
                 android:background="@color/colorPrimary"
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Solicitudes"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_permiso"
@@ -192,6 +201,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Permisos"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_actividad"
@@ -208,6 +218,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Actividades"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_gusto"
@@ -224,6 +235,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Gustos"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_pregunta2"
@@ -240,6 +252,7 @@
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:background="@color/colorPrimary"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Preguntas"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toTopOf="@+id/btn_expresion"
@@ -256,6 +269,7 @@
                 android:background="@color/colorPrimary"
                 android:layout_marginBottom="@dimen/margen_inferior_boton"
                 android:onClick="redireccionarVista"
+                tools:ignore="OnClick"
                 android:text="Expresiones"
                 android:textColor="@color/colorTextoBotones"
                 app:layout_constraintBottom_toBottomOf="parent"
