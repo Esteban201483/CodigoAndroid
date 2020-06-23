@@ -21,15 +21,6 @@ public class MainActivity extends AppCompatActivity {
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
         setRequestedOrientation(ActivityInfo.SCREEN_ORIENTATION_PORTRAIT);
-        /*
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Probando...", Snackbar.LENGTH_SHORT)
-                        .setAction("Action", null).show();
-            }
-        });*/
     }
 
 
@@ -50,6 +41,12 @@ public class MainActivity extends AppCompatActivity {
         //noinspection SimplifiableIfStatement
         if (id == R.id.action_credits) {
             Intent intent = new Intent(this,CreditosActivity.class);
+            startActivity(intent);
+            return true;
+        }
+
+        if (id == R.id.action_aclaration) {
+            Intent intent = new Intent(this,AclaracionActivity.class);
             startActivity(intent);
             return true;
         }
