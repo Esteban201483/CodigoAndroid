@@ -133,8 +133,8 @@ public class casoLetra1 extends AppCompatActivity {
         categorias[13] = "Preguntas";
         categorias[14] = "Expresiones Útiles";
 
-        cantidad_elementos[0] = 15;
-        cantidad_elementos[1] = 3;
+        cantidad_elementos[0] = 13;
+        cantidad_elementos[1] = 2;
         cantidad_elementos[2] = 31;
         cantidad_elementos[3] = 9;
         cantidad_elementos[4] = 2;
