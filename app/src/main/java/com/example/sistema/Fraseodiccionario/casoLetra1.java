@@ -135,19 +135,19 @@ public class casoLetra1 extends AppCompatActivity {
 
         cantidad_elementos[0] = 13;
         cantidad_elementos[1] = 2;
-        cantidad_elementos[2] = 31;
-        cantidad_elementos[3] = 9;
-        cantidad_elementos[4] = 2;
-        cantidad_elementos[5] = 9;
-        cantidad_elementos[6] = 6;
-        cantidad_elementos[7] = 11;
-        cantidad_elementos[8] = 33;
-        cantidad_elementos[9] = 12;
-        cantidad_elementos[10] = 2;
-        cantidad_elementos[11] = 8;
-        cantidad_elementos[12] = 5;
-        cantidad_elementos[13] = 7;
-        cantidad_elementos[14] = 7;
+        cantidad_elementos[2] = 29;
+        cantidad_elementos[3] = 8;
+        cantidad_elementos[4] = 1;
+        cantidad_elementos[5] = 8;
+        cantidad_elementos[6] = 5;
+        cantidad_elementos[7] = 10;
+        cantidad_elementos[8] = 30;
+        cantidad_elementos[9] = 10;
+        cantidad_elementos[10] = 1;
+        cantidad_elementos[11] = 7;
+        cantidad_elementos[12] = 4;
+        cantidad_elementos[13] = 6;
+        cantidad_elementos[14] = 6;
 
 
     }
