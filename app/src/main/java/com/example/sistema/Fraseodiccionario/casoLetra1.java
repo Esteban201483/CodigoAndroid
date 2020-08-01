@@ -141,7 +141,7 @@ public class casoLetra1 extends AppCompatActivity {
         cantidad_elementos[9] = 10;
         cantidad_elementos[10] = 1;
         cantidad_elementos[11] = 7;
-        cantidad_elementos[12] = 4;
+        cantidad_elementos[12] = 3;
         cantidad_elementos[13] = 6;
         cantidad_elementos[14] = 6;
 
