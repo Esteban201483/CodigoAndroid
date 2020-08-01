@@ -62,8 +62,6 @@
         <item>¿Cómo están? (A media mañana)  </item>
         <item>¿Cómo estás? (Antes del mediodía) ​</item>
         <item>¿Cómo están? (Antes del mediodía) ​</item>
-        <item>Al mediodía</item>
-        <item>Al mediodía</item>
         <item>¿Cómo estás? (Al mediodía) </item>
         <item>¿Cómo están? (Al mediodía) </item>
         <item>¿Cómo estás? (Después del mediodía) </item>
@@ -151,8 +149,8 @@
         <item>Vaya hacia abajo</item>
         <item>Vayan hacia abajo</item>
         <item>Venga hacia abajo</item>
-        <item>Vengan hacia abajo</item>
-        <item>Venga</item>
+        <!--<item>Vengan hacia abajo</item>-->
+        <!--<item>Venga</item>-->
         <item>Vengan</item>
         <item>Venga en dirección horizontal</item>
         <item>Vengan en dirección horizontal</item>
