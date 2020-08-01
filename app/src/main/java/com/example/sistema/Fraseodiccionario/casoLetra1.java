@@ -52,7 +52,7 @@ public class casoLetra1 extends AppCompatActivity {
     private String genero = MUJER;
 
     private int cantidad_elementos[]; //Indica la cantidad de elemmentos por categoria
-    private String categorias[]; //Almacena el nombre de las categorias
+    //private String categorias[]; //Almacena el nombre de las categorias
 
     private String traduccion = "";  //Almacena la traducción de la palabra actual
 
@@ -110,10 +110,10 @@ public class casoLetra1 extends AppCompatActivity {
 
     public void inicializarCategorias()
     {
-        categorias = new String[cantidad_categorias];
+        //categorias = new String[cantidad_categorias];
         cantidad_elementos = new int[cantidad_categorias];
 
-        categorias[0]  = "Información Personal";
+        /*categorias[0]  = "Información Personal";
         categorias[1]  = "Preguntas Sí/No";
         categorias[2]  = "Saludos";
         categorias[3]  = "Despedidas";
@@ -127,7 +127,7 @@ public class casoLetra1 extends AppCompatActivity {
         categorias[11] = "Actividades";
         categorias[12] = "Gustos";
         categorias[13] = "Preguntas";
-        categorias[14] = "Expresiones Útiles";
+        categorias[14] = "Expresiones Útiles";*/
 
         cantidad_elementos[0] = 13;
         cantidad_elementos[1] = 2;
@@ -154,7 +154,10 @@ public class casoLetra1 extends AppCompatActivity {
     public void setearCategoria()
     {
         TextView cat = (TextView) findViewById(R.id.txt_categoria);
-        cat.setText(categorias[categoria-1]);
+
+        int string_id = getResources().getIdentifier("indice" + categoria,"string",
+                getPackageName());
+        cat.setText(getResources().getString(string_id));
     }
 
     /**
