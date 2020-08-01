@@ -30,14 +30,13 @@
     <!-- Palabras de la categoria 1-->
     <string-array name="categoria1">
         <item>¿Cómo se llama usted?</item>
-        <item>¿Cómo se llama usted?</item>
         <item>Me llamo____</item>
         <item>¿Cuántos años tiene usted?</item>
         <item>Tengo_____años</item>
         <item>¿Dónde vive usted?</item>
         <item>Vivo en Brorán/ Soy de Brorán</item>
         <item>Soy brorán</item>
-        <item>Soy de Bijagual</item>
+        <item>Vivo en Bijagual / Soy de Bijagual</item>
         <item>¿Cómo se llama su mamá?</item>
         <item>Mi mamá se llama</item>
         <item>¿Cómo se llama su papá?</item>
@@ -54,53 +53,55 @@
 
     <!--Palabras de la categoria 3-->
     <string-array name="categoria3">
-        <item>Saludos generales (a cualquier hora)</item>
-        <item>Saludos generales (a cualquier hora)</item>
-        <item>Saludos generales (a cualquier hora)</item>
-        <item>Al amanecer</item>
-        <item>Al amanecer</item>
-        <item>A media mañana</item>
-        <item>A media mañana</item>
-        <item>Antes del mediodía​</item>
-        <item>Antes del mediodía​</item>
+        <item>Hola (a cualquier hora)</item>
+        <item>¿Cómo estás?</item>
+        <item>¿Cómo están?</item>
+        <item>¿Cómo estás? (Al amanecer)</item>
+        <item>¿Cómo están? (Al amanecer) </item>
+        <item>¿Cómo estás? (A media mañana)</item>
+        <item>¿Cómo están? (A media mañana)  </item>
+        <item>¿Cómo estás? (Antes del mediodía) ​</item>
+        <item>¿Cómo están? (Antes del mediodía) ​</item>
         <item>Al mediodía</item>
         <item>Al mediodía</item>
-        <item>Después del mediodía</item>
-        <item>Después del mediodía</item>
-        <item>A media tarde</item>
-        <item>A media tarde</item>
-        <item>Avanzada la tarde</item>
-        <item>Avanzada la tarde</item>
-        <item>En la noche</item>
-        <item>En la noche</item>
-        <item>Bien, bien (respuesta)</item>
-        <item>Bien, bien (respuesta)</item>
+        <item>¿Cómo estás? (Al mediodía) </item>
+        <item>¿Cómo están? (Al mediodía) </item>
+        <item>¿Cómo estás? (Después del mediodía) </item>
+        <item>¿Cómo están? (Después del mediodía) </item>
+        <item>¿Cómo estás? (A media tarde) </item>
+        <item>¿Cómo están? (A media tarde) </item>
+        <item>¿Cómo estás? (Avanzada la tarde) </item>
+        <item>¿Cómo están? (Avanzada la tarde) </item>
+        <item>¿Cómo estás? (En la noche) </item>
+        <item>¿Cómo están? (En la noche) </item>
+        <item>Bien, bien (respuesta al saludo) </item>
+        <item>Bien (respuesta al saludo) </item>
         <item>Y usted, ¿cómo está?</item>
-        <item>¿Y usted?</item>
-        <item>_Yo también</item>
-        <item>_Igual a usted</item>
-        <item>Bienvenido</item>
-        <item>Bienvenidos</item>
+        <item>Y ustedes, ¿cómo están? </item>
+        <item>¿Y usted? </item>
+        <item>¿Y ustedes?</item>
+        <item>_Yo también </item>
+        <item>_Igual a usted  </item>
+        <item>Bienvenido (literalmente ‘entre a la casa’) </item>
+        <item>Bienvenidos (literalmente ‘entren a la casa’) </item>
 
     </string-array>
 
     <!--Palabras de la categoria 4-->
     <string-array name="categoria4">
-        <item>Hasta luego (una persona)</item>
-        <item>Hasta luego (una persona)</item>
-        <item>Hasta luego (varias personas)</item>
-        <item>Hasta luego (varias personas)</item>
+        <item>Hasta luego (lo dice una persona)</item>
+        <item>Hasta luego (lo dice una persona)</item>
+        <item>Hasta luego (lo dice más de una persona)</item>
         <item>Adiós/hasta luego (lo dice una persona)</item>
-        <item>Adiós/hasta luego (lo dicen dos o más personas)</item>
-        <item>Respuesta a la despedida:</item>
-        <item>Vámonos</item>
+        <item>Adiós/hasta luego (lo dice más de una persona)</item>
+        <item>Adiós/hasta luego (respuesta a la despedida)</item>
+        <item>Vámonos </item>
         <item>Vaya con Dios/Que Dios lo acompañe</item>
-
     </string-array>
 
     <!--Palabras de la categoria 5-->
     <string-array name="categoria5">
-        <item>Que Dios se lo pague (Gracias)</item>
+        <item>Gracias</item>
     </string-array>
 
     <!--Palabras de la cateogria 6-->
@@ -143,14 +144,22 @@
         <item>Vaya (a un lugar)</item>
         <item>Vayan (a un lugar)</item>
         <item>Váyase</item>
-        <item>Ir: dirección horizontal</item>
+        <item>Vaya en dirección horizontal</item>
+        <item>Vayan en dirección horizontal</item>
         <item>Vaya hacia arriba</item>
+        <item>Vayan hacia arriba</item>
         <item>Vaya hacia abajo</item>
+        <item>Vayan hacia abajo</item>
+        <item>Venga hacia abajo</item>
+        <item>Vengan hacia abajo</item>
         <item>Venga</item>
         <item>Vengan</item>
         <item>Venga en dirección horizontal</item>
+        <item>Vengan en dirección horizontal</item>
         <item>Venga hacia arriba</item>
+        <item>Vengan hacia arriba</item>
         <item>Venga hacia abajo</item>
+        <item>Vengan hacia abajo</item>
         <item>Siéntese</item>
         <item>Siéntense</item>
         <item>Póngase de pie</item>
@@ -158,7 +167,7 @@
         <item>Cante</item>
         <item>Canten</item>
         <item>Escuche</item>
-        <item>Escúcheme</item>
+        <item>Repita</item>
         <item>Haga silencio</item>
         <item>Hagan silencio</item>
         <item>No salga</item>
@@ -183,7 +192,7 @@
 
     <!--Palabras de la categoria 11-->
     <string-array name="categoria11">
-        <item>¿?</item> <!--todo: Preguntar que es esto-->
+        <item>Para pedir permiso para hacer algo</item>
     </string-array>
 
     <!--Palabras de la cateogira 12-->
