@@ -11,6 +11,22 @@
 
     <!--TODO: Verificar que las traducciones coincidan con los audios-->
 
+    <string name="indice1">Información Personal</string>
+    <string name="indice2">Para contestar ‘sí’ o ‘no’   </string>
+    <string name="indice3">Saludos</string>
+    <string name="indice4">Despedidas</string>
+    <string name="indice5">Agradecimiento</string>
+    <string name="indice6">Estados Físicos</string>
+    <string name="indice7">Estados emocionales</string>
+    <string name="indice8">Los momentos del día</string>
+    <string name="indice9">Órdenes básicas</string>
+    <string name="indice10">Solicitudes</string>
+    <string name="indice11">Para pedir permiso para hacer algo</string>
+    <string name="indice12">Actividades</string>
+    <string name="indice13">Para expresar gustos</string>
+    <string name="indice14">Preguntas</string>
+    <string name="indice15">Otras expresiones útiles</string>
+
     <!-- Palabras de la categoria 1-->
     <string-array name="categoria1">
         <item>¿Cómo se llama usted?</item>

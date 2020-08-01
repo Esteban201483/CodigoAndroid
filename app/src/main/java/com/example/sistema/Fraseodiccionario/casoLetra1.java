@@ -64,10 +64,6 @@ public class casoLetra1 extends AppCompatActivity {
 
     private String version_pais = COSTARICA;
 
-
-
-
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -214,7 +210,23 @@ public class casoLetra1 extends AppCompatActivity {
         id_audio = getResources().getIdentifier(nombre_audio,"raw",getPackageName());
 
         if(id_audio == 0)
-            showMessage("Error: El audio " + nombre_audio + " no existe");
+        {
+            //Si no existe el audio en versión de Panamá, intenta reproducir el audio de la versión
+            //de costa rica
+            if(id_audio == 0 && version_pais.equals(PANAMA))
+            {
+                String viejo_nombre = nombre_audio;
+                nombre_audio = "c" + categoria + "s" + indice_palabra + genero + COSTARICA;
+                id_audio = getResources().getIdentifier(nombre_audio,"raw",getPackageName());
+                if(id_audio == 0)
+                    showMessage("Error: El audio " + viejo_nombre + " no existe");
+                else
+                {
+                    showMessage("Se ha cargado el audio de Costa Rica");
+                }
+            }
+
+        }
     }
 
     public void setearTraduccion()
